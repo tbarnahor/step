@@ -8,11 +8,27 @@
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <div id="heading">
+      <h1>Tal's Portfolio</h1>
+      </div>
+      <p>My name is Tal Bar Nahor<br> I am a STEP intern at
+      <img src=/images/google_logo.jpg/ alt="Google" width="90" height="40" style="vertical-align:middle"></p> 
+    <div id="more_content">
+        <p><u>Some facts about me:</u></p>
+        <ul>
+            <li>I am a third (and last) year student at TAU getting a BSc in Computer Science, Psychology and Neuroscience</li>
+            <li>I was born and raised in <a href="https://www.google.com/maps/place/Alon+HaGalil/@32.7675239,35.1761655,13.12z/data=!4m5!3m4!1s0x151c4cade21b5b55:0x87732d9803ac2242!8m2!3d32.756874!4d35.220294"
+            target=_blank><span title = "See on Google Maps"> Alon HaGalil<span></a>, which I think is an awesome place</li>
+            <li> I love traveling in Israel and around the world</li>
+        </ul> 
+
+            Click here to get a random picture of a place in Israel I recently visited:
+            <button onclick="addRandomPic()"><b>GET A PIC</b></button>
+            <div id="image-container" >
+            </div>
+            <div id= "location-title">
+            <p id="location-name"></p>
+            </div>
     </div>
   </body>
 </html>
