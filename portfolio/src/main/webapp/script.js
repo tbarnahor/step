@@ -15,14 +15,38 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+function addRandomPic() {
+  const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];
+  
+  // Pick a random place
+  const imageName = places[Math.floor(Math.random() * places.length)];
+  
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  // Add image to the page
+  const imgElement = createImg(imageName);
+  const imageContainer = document.getElementById('image-container');
+
+  //Add title to image
+  const location = document.getElementById('location-name')  
+  location.innerText = imageName;
+  const titleContainer = document.getElementById('location-title');
+
+  // Remove the previous image.
+  imageContainer.innerHTML = '';
+  imageContainer.appendChild(imgElement);
+  titleContainer.style.display = "inline-block";
 }
+
+function createImg(imageName) {
+  const imgUrl = '/images/' + imageName + '.jpg';
+  const imgElement = document.createElement('img');
+  imgElement.src = imgUrl;
+  imgElement.alt = 'I am sorry, the image cannot be displayed';
+  imgElement.width = 300;
+  imgElement.height = 300;
+  return imgElement;
+}
+
+
+

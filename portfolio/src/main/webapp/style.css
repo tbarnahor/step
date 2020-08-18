@@ -1,9 +1,40 @@
+body{
+    background-color: #e1f5f56b;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
+  font-size: 25px;
+  font-family: Impact, Charcoal, sans-serif;
 }
 
-#greeting-container {
+#heading {
+  color: darkslateblue;
+}
+
+#more_content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1500px;
+  font-size: 20px;
+  
+}
+
+#image-container {
   margin-top: 20px;
+}
+
+img {
+  display: inline-block;
+}
+
+#location-title{
+  display: none;  
+  background-color: rgba(216, 204, 173, 0.658);
+  border: thin solid black;
+  width: 298px;
+  margin-top: -6px;
+  text-align: center;
 }
