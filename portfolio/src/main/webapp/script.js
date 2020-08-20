@@ -49,4 +49,11 @@ function createImg(imageName) {
 }
 
 
+function getHelloMsg(){
+    fetch('/data').then(response => response.text()).then((massage) => {
+    document.getElementById('massage-container').innerText = massage;
+  });
+}
+
+
 
