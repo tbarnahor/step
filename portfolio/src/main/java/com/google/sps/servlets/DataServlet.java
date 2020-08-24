@@ -27,33 +27,23 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-    private List<String> messages;
-
-  @Override
-  public void init() {
-    messages = new ArrayList<>();
-    messages.add("Welcome to my protfolio");
-    messages.add("Have a great day :)");
-    messages.add("Hi there!");
-  }
+  private List<String> comments = new ArrayList<>();;
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Convert messages to JSON
-    String json = convertToJson(messages);
-
-    // Send the JSON as the response
-    response.setContentType("application/json;");
+    response.setContentType("application/json");
+    String json = new Gson().toJson(comments);
     response.getWriter().println(json);
   }
 
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Get the input from the form.
+    String text = request.getParameter("text-input");
 
-  private String convertToJson(List messages) {
-    Gson gson = new Gson();
-    String json = gson.toJson(messages);
-    return json;
+    comments.add(text);
+
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
   }
-
-
-
 }

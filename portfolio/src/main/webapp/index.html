@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getHelloMsg()">
-    <ol><div id="massage-container"></div></ol>
+  <body onload="getComment()">
     <div id="content">
       <div id="heading">
       <h1>Tal's Portfolio</h1>
@@ -30,6 +29,18 @@
             <div id= "location-title">
             <p id="location-name"></p>
             </div>
+        
+        <div id= "comments-container">
+            <form action="/data"" method="POST">
+            <p>Please leave a comment:</p>
+            <textarea name="text-input" cols="40">Write your comment here</textarea>
+            <br><br/>
+            <input type="submit" />
+            </form>
+            <p><small><u>Previous Comments:</u></small></p>
+            <ul id="history"></ul>
+            </div>
+        
     </div>
   </body>
 </html>

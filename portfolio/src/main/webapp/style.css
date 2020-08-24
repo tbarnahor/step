@@ -26,6 +26,15 @@ body{
   margin-top: 20px;
 }
 
+#comments-container {
+    font-size: 16px;
+    border: 1px dashed black;
+    background-color: rgb(225 237 211 / 54%);
+    width: 800px;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
 img {
   display: inline-block;
 }
@@ -37,4 +46,14 @@ img {
   width: 298px;
   margin-top: -6px;
   text-align: center;
+}
+
+
+#history li {
+    list-style: none;
+    background: #bdcb2e80;
+    margin: 5px;
+    margin-left: -27px;
+    margin-right: 30px;
+    font-size: 14px;
 }

@@ -49,17 +49,20 @@ function createImg(imageName) {
 }
 
 
-function getHelloMsg(){
-    fetch('/data').then(response => response.json()).then((massages) => {
-    const messageListElement = document.getElementById('massage-container');
-    messageListElement.innerText = '';
-    messageListElement.appendChild(createListElement(massages[2]));
-    messageListElement.appendChild(createListElement(massages[0]));
-    messageListElement.appendChild(createListElement(massages[1]));
+/**
+ * Fetches the new comment and builds the UI.
+ */
+function getComment() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    // Build the list of history comments.
+    const historyEl = document.getElementById('history');
+    comments.forEach((line) => {
+      historyEl.appendChild(createListElement(line));
+    });
   });
 }
 
-/** Creates an ordered list element containing text. */
+/** Creates an <li> element containing text. */
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
