@@ -53,9 +53,9 @@ function getHelloMsg(){
     fetch('/data').then(response => response.json()).then((massages) => {
     const messageListElement = document.getElementById('massage-container');
     messageListElement.innerText = '';
-    messageListElement.appendChild(createListElement(massages[2]));
-    messageListElement.appendChild(createListElement(massages[0]));
-    messageListElement.appendChild(createListElement(massages[1]));
+    for (var i = 0; i < 5; i++) {
+       messageListElement.appendChild(createListElement(massages[i]));;
+    }
   });
 }
 
