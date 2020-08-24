@@ -36,21 +36,10 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Convert messages to JSON
-    String json = convertToJson(messages);
-
     // Send the JSON as the response
     response.setContentType("application/json;");
-    response.getWriter().println(json);
+    response.getWriter().println(new Gson().toJson(messages)),
   }
-
-
-  private String convertToJson(List messages) {
-    Gson gson = new Gson();
-    String json = gson.toJson(messages);
-    return json;
-  }
-
 
 
 }
