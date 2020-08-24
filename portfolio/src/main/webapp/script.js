@@ -50,9 +50,20 @@ function createImg(imageName) {
 
 
 function getHelloMsg(){
-    fetch('/data').then(response => response.text()).then((massage) => {
-    document.getElementById('massage-container').innerText = massage;
+    fetch('/data').then(response => response.json()).then((massages) => {
+    const messageListElement = document.getElementById('massage-container');
+    messageListElement.innerText = '';
+    messageListElement.appendChild(createListElement(massages[2]));
+    messageListElement.appendChild(createListElement(massages[0]));
+    messageListElement.appendChild(createListElement(massages[1]));
   });
+}
+
+/** Creates an ordered list element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
 
 
