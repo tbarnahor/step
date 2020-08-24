@@ -31,7 +31,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void init() {
-    messages = new ArrayList<>(Arrays.asList("Welcome to my protfolio", "Have a great day :)", "Hi there!"));
+    messages = new ArrayList<>(Arrays.asList("Hi there!", "Welcome to my protfolio", "Have a great day :)"));
   }
 
   @Override
