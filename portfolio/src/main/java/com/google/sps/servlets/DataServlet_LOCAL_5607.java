@@ -55,7 +55,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Get the input from the form
+    // Get the input from the form.
     String comment = request.getParameter("comment");
     long timestamp = System.currentTimeMillis();
 
@@ -67,7 +67,13 @@ public class DataServlet extends HttpServlet {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
 
+    response.sendRedirect("/index.html");
+
     // Redirect back to the HTML page.
     response.sendRedirect("/index.html");
   }
+
+
+
+
 }
