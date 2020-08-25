@@ -50,15 +50,16 @@ function createImg(imageName) {
 
 
 function getHelloMsg(){
-    fetch('/data').then(response => response.json()).then((massages) => {
-    const messageListElement = document.getElementById('massage-container');
+  fetch('/data').then(response => response.json()).then((messages) => {
+    const messageListElement = document.getElementById('message-container');
     messageListElement.innerText = '';
-    for (var i = 0; i < 3; i++) {
-       messageListElement.appendChild(createListElement(massages[i]));;
-    }
+    messages.forEach((message) => {
+      messageListElement.appendChild(createListElement(message));
+    });
   });
 }
 
+      
 /** Creates an ordered list element containing text. */
 function createListElement(text) {
   const liElement = document.createElement('li');
