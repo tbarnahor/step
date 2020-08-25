@@ -53,7 +53,7 @@ function getHelloMsg(){
     fetch('/data').then(response => response.json()).then((massages) => {
     const messageListElement = document.getElementById('massage-container');
     messageListElement.innerText = '';
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 3; i++) {
        messageListElement.appendChild(createListElement(massages[i]));;
     }
   });
