@@ -24,22 +24,20 @@
 
             Click here to get a random picture of a place in Israel I recently visited:
             <button onclick="addRandomPic()"><b>GET A PIC</b></button>
-            <div id="image-container" >
-            </div>
+            <div id="image-container" > </div>
             <div id= "location-title">
-            <p id="location-name"></p>
-            </div>
+            <p id="location-name"></p> </div>
         
         <div id= "comments-container">
-            <form action="/data"" method="POST">
             <p>Please leave a comment:</p>
-            <textarea name="text-input" cols="40">Write your comment here</textarea>
-            <br><br/>
-            <input type="submit" />
+            <form action="/data" method="POST">
+                <input type="text" name="comment" size="50" onfocus="this.value=''" value="Write your comment here"/><br><br>
+                <input type="submit" />
             </form>
+            
             <p><small><u>Previous Comments:</u></small></p>
             <ul id="history"></ul>
-            </div>
+        </div>
         
     </div>
   </body>

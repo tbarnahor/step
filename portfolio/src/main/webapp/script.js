@@ -57,16 +57,21 @@ function getComment() {
     // Build the list of history comments.
     const historyEl = document.getElementById('history');
     comments.forEach((line) => {
-      historyEl.appendChild(createListElement(line));
+      historyEl.appendChild(createCommentElement(line));
     });
   });
 }
 
 /** Creates an <li> element containing text. */
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+function createCommentElement(text) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+
+  const textElement = document.createElement('span');
+  textElement.innerText = text;
+  
+  commentElement.appendChild(textElement);
+  return commentElement;
 }
 
 

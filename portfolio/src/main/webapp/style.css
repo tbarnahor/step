@@ -1,5 +1,5 @@
 body{
-    background-color: #e1f5f56b;
+  background-color: #e1f5f56b;
 }
 
 #content {
@@ -27,12 +27,13 @@ body{
 }
 
 #comments-container {
-    font-size: 16px;
-    border: 1px dashed black;
-    background-color: rgb(225 237 211 / 54%);
-    width: 800px;
-    padding-left: 30px;
-    margin-top: 20px;
+  font-size: 16px;
+  border: 1px dashed black;
+  background-color: rgb(225 237 211 / 54%);
+  width: 800px;
+  padding-left: 30px;
+  margin-top: 20px;
+  line-height: 0.7;
 }
 
 img {
