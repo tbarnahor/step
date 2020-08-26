@@ -33,10 +33,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
+  private DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
     List<String> comments = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
@@ -46,21 +48,16 @@ public class DataServlet extends HttpServlet {
     response.getWriter().println(new Gson().toJson(comments));
   }
 
-
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form
     String comment = request.getParameter("comment");
     long timestamp = System.currentTimeMillis();
-
+    //Create entity for Datastore
     Entity commentEntity = new Entity("Comment");
-
     commentEntity.setProperty("comment", comment);
     commentEntity.setProperty("timestamp", timestamp);
-
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
-
     // Redirect back to the HTML page.
     response.sendRedirect("/index.html");
   }

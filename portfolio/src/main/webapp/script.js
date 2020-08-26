@@ -21,17 +21,13 @@ function addRandomPic() {
   
   // Pick a random place
   const imageName = places[Math.floor(Math.random() * places.length)];
-  
-
   // Add image to the page
   const imgElement = createImg(imageName);
   const imageContainer = document.getElementById('image-container');
-
   //Add title to image
   const location = document.getElementById('location-name')  
   location.innerText = imageName;
   const titleContainer = document.getElementById('location-title');
-
   // Remove the previous image.
   imageContainer.innerHTML = '';
   imageContainer.appendChild(imgElement);
@@ -48,7 +44,6 @@ function createImg(imageName) {
   return imgElement;
 }
 
-
 /**
  * Fetches the new comment and builds the UI.
  */
@@ -56,8 +51,8 @@ function getComment() {
   fetch('/data').then(response => response.json()).then((comments) => {
     // Build the list of history comments.
     const historyEl = document.getElementById('history');
-    comments.forEach((line) => {
-      historyEl.appendChild(createCommentElement(line));
+    comments.forEach((comment) => {
+      historyEl.appendChild(createCommentElement(comment));
     });
   });
 }
@@ -66,13 +61,9 @@ function getComment() {
 function createCommentElement(text) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
-
   const textElement = document.createElement('span');
   textElement.innerText = text;
-  
   commentElement.appendChild(textElement);
   return commentElement;
 }
-
-
 
