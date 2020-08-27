@@ -47,7 +47,7 @@ function createImg(imageName) {
 /**
  * Fetches the new comment and builds the UI.
  */
-function getComment() {
+function getComments() {
   var maxComments = document.getElementById("commentsNum").value;
   var fetchUrl = '/data?num=' + maxComments;
   fetch(fetchUrl).then(response => response.json()).then((comments) => {
@@ -72,6 +72,6 @@ function createCommentElement(text) {
 /** Clears out old comments and inserts the selected number of comments. */
 function changeCommentsNum(){
   document.getElementById("history").innerHTML = "";
-  getComment();
+  getComments();
 }
 

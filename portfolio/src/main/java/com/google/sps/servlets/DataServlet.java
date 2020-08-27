@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+/** Servlet responsible for creating new comments and listing the comments. */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
@@ -57,12 +57,14 @@ public class DataServlet extends HttpServlet {
     // Get the input from the form
     String comment = request.getParameter("comment");
     long timestamp = System.currentTimeMillis();
+
     //Create entity for Datastore
     Entity commentEntity = new Entity("Comment");
     commentEntity.setProperty("comment", comment);
     commentEntity.setProperty("timestamp", timestamp);
     datastore.put(commentEntity);
-    // Redirect back to the HTML page.
+
+    // Redirect back to the HTML page
     response.sendRedirect("/index.html");
   }
 }
