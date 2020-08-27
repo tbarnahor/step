@@ -48,7 +48,9 @@ function createImg(imageName) {
  * Fetches the new comment and builds the UI.
  */
 function getComments() {
-  fetch('/data').then(response => response.json()).then((comments) => {
+  var maxComments = document.getElementById("commentsNum").value;
+  var fetchUrl = '/data?num=' + maxComments;
+  fetch(fetchUrl).then(response => response.json()).then((comments) => {
     // Build the list of history comments.
     const historyEl = document.getElementById('history');
     comments.forEach((comment) => {
