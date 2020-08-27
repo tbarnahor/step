@@ -38,11 +38,15 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    int maxComments = Integer.parseInt(request.getParameter("num"));
     Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
     PreparedQuery results = datastore.prepare(query);
     List<String> comments = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
       comments.add((String) entity.getProperty("comment"));
+      if (comments.size() == maxComments) {
+          break;
+      }
     }
     response.setContentType("application/json;");
     response.getWriter().println(new Gson().toJson(comments));
