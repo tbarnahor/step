@@ -15,7 +15,6 @@
 /**
  * Adds a random greeting to the page.
  */
-
 function addRandomPic() {
   const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];
   
@@ -69,8 +68,8 @@ function createCommentElement(text) {
   return commentElement;
 }
 
-/** Clears out old comments and inserts the selected number of comments. */
-function changeCommentsNum(){
+/** Changes number of comments displayed. */
+function changeCommentsNum() {
   clearComments();
   getComments();
 }
@@ -80,6 +79,7 @@ function deleteComments() {
   fetch('/delete-data', {method: 'POST'}).then(() => clearComments());
 }
 
+/**Clears the displayed comments */
 function clearComments() {
     document.getElementById("history").innerHTML = "";
 }
