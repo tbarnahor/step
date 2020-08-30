@@ -15,7 +15,6 @@
 /**
  * Adds a random greeting to the page.
  */
-
 function addRandomPic() {
   const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];
   
@@ -48,8 +47,8 @@ function createImg(imageName) {
  * Fetches the new comment and builds the UI.
  */
 function getComments() {
-  var maxComments = document.getElementById("commentsNum").value;
-  var fetchUrl = '/data?num=' + maxComments;
+  var maxComments = document.getElementById("maxComments").value;
+  var fetchUrl = '/data?maxComments=' + maxComments;
   fetch(fetchUrl).then(response => response.json()).then((comments) => {
     // Build the list of history comments.
     const historyEl = document.getElementById('history');
