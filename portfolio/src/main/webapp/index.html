@@ -36,7 +36,13 @@
                 <input type="submit"/>
             </form>
             
-            <p><small><u>Previous Comments:</u></small></p>
+            <p><small><b><u>Previous Comments:</b></u></small></p>
+            <label for="maxComments"><small>Choose a maximum number of comments to be displayed:</small></label>
+            <select name="num" id="maxComments" onchange="changeCommentsNum()">
+                <option value="1">1
+                <option value="5">5
+                <option value="10">10
+            </select>
             <ul id="history"></ul>
         </div>
         
