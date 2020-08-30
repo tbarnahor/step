@@ -21,17 +21,13 @@ function addRandomPic() {
   
   // Pick a random place
   const imageName = places[Math.floor(Math.random() * places.length)];
-  
-
   // Add image to the page
   const imgElement = createImg(imageName);
   const imageContainer = document.getElementById('image-container');
-
   //Add title to image
   const location = document.getElementById('location-name')  
   location.innerText = imageName;
   const titleContainer = document.getElementById('location-title');
-
   // Remove the previous image.
   imageContainer.innerHTML = '';
   imageContainer.appendChild(imgElement);
@@ -48,24 +44,32 @@ function createImg(imageName) {
   return imgElement;
 }
 
-
-function getHelloMsg(){
-  fetch('/data').then(response => response.json()).then((messages) => {
-    const messageListElement = document.getElementById('message-container');
-    messageListElement.innerText = '';
-    messages.forEach((message) => {
-      messageListElement.appendChild(createListElement(message));
+/**
+ * Fetches the new comment and builds the UI.
+ */
+function getComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    // Build the list of history comments.
+    const historyEl = document.getElementById('history');
+    comments.forEach((comment) => {
+      historyEl.appendChild(createCommentElement(comment));
     });
   });
 }
 
-      
-/** Creates an ordered list element containing text. */
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+/** Creates an <li> element containing text. */
+function createCommentElement(text) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+  const textElement = document.createElement('span');
+  textElement.innerText = text;
+  commentElement.appendChild(textElement);
+  return commentElement;
 }
 
-
+/** Clears out old comments and inserts the selected number of comments. */
+function changeCommentsNum(){
+  document.getElementById("history").innerHTML = "";
+  getComments();
+}
 

@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getHelloMsg()">
-    <ol><div id="message-container"></div></ol>
+  
+  <body onload="getComments()">
     <div id="content">
       <div id="heading">
       <h1>Tal's Portfolio</h1>
@@ -25,11 +25,21 @@
 
             Click here to get a random picture of a place in Israel I recently visited:
             <button onclick="addRandomPic()"><b>GET A PIC</b></button>
-            <div id="image-container" >
-            </div>
+            <div id="image-container" > </div>
             <div id= "location-title">
-            <p id="location-name"></p>
-            </div>
+            <p id="location-name"></p> </div>
+        
+        <div id= "comments-container">
+            <p>Please leave a comment:</p>
+            <form action="/data" method="POST">
+                <input type="text" name="comment" size="50" onfocus="this.value=''" value="Write your comment here"/><br><br>
+                <input type="submit"/>
+            </form>
+            
+            <p><small><u>Previous Comments:</u></small></p>
+            <ul id="history"></ul>
+        </div>
+        
     </div>
   </body>
 </html>
