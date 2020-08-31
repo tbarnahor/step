@@ -44,6 +44,18 @@ function createImg(imageName) {
 }
 
 /**
+ * Sets num of comments to be displayed when a page loads
+ */
+function load() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const maxComments = urlParams.get('maxComments');
+  if (maxComments == '5' || maxComments == '10') {
+    document.getElementById("maxComments").value = maxComments;
+  }
+  getComments();
+}
+
+/**
  * Fetches the new comment and builds the UI.
  */
 function getComments() {

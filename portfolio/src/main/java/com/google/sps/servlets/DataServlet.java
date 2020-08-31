@@ -36,7 +36,6 @@ public class DataServlet extends HttpServlet {
 
   private final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
-
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     int maxComments = Integer.parseInt(request.getParameter("maxComments"));
@@ -54,6 +53,7 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form
     String comment = request.getParameter("comment");
+    String maxComments = request.getParameter("num");
     long timestamp = System.currentTimeMillis();
 
     //Create entity for Datastore
@@ -62,7 +62,12 @@ public class DataServlet extends HttpServlet {
     commentEntity.setProperty("timestamp", timestamp);
     datastore.put(commentEntity);
 
+    //If no maxComments was selected pass default
+    if (!maxComments.equals("5") && !maxComments.equals("10")) {
+        maxComments = "1";
+    }
+
     // Redirect back to the HTML page
-    response.sendRedirect("/index.html");
+    response.sendRedirect("/index.html?maxComments=" + maxComments);
   }
 }
