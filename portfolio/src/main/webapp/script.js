@@ -74,12 +74,13 @@ function changeCommentsNum() {
   getComments();
 }
 
-/** Tells the server to delete all comments. */
+/** Deletes all comments. */
 function deleteComments() {
   fetch('/delete-data', {method: 'POST'}).then(() => clearComments());
 }
 
-/**Clears the displayed comments */
+/** Clears out the displayed comments. */
 function clearComments() {
     document.getElementById("history").innerHTML = "";
 }
+
