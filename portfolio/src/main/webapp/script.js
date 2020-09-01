@@ -53,11 +53,11 @@ function load() {
 
 /** Fetches the new comment and builds the UI. */
 function getComments() {
+  const historyEl = document.getElementById('history');
   var maxComments = document.getElementById("maxComments").value;
   var fetchUrl = '/data?maxComments=' + maxComments;
   fetch(fetchUrl).then(response => response.json()).then((comments) => {
     // Build the list of history comments.
-    const historyEl = document.getElementById('history');
     comments.forEach((comment) => {
       historyEl.appendChild(createCommentElement(comment));
     });
@@ -65,11 +65,11 @@ function getComments() {
 }
 
 /** Creates an <li> element containing text. */
-function createCommentElement(text) {
+function createCommentElement(comment) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
   const textElement = document.createElement('span');
-  textElement.innerText = text;
+  textElement.innerText = comment.text;
   commentElement.appendChild(textElement);
   return commentElement;
 }
