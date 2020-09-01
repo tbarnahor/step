@@ -35,14 +35,17 @@ import com.google.appengine.api.datastore.Key;
 /** Servlet responsible for deleting comments. */
 @WebServlet("/delete-data")
 public class DeleteDataServlet extends HttpServlet {
+  
+  private final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     Query query = new Query("Comment");
     PreparedQuery results =  datastore.prepare(query);
+    List<Key> commentsKeys = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
-        datastore.delete(entity.getKey());
+        commentsKeys.add(entity.getKey());
     }
+    datastore.delete(commentsKeys);
   }
 }
