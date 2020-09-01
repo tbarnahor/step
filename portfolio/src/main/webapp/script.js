@@ -47,13 +47,13 @@ function createImg(imageName) {
  * Fetches the new comment and builds the UI.
  */
 function getComments() {
+  const historyEl = document.getElementById('history');
   var maxComments = document.getElementById("maxComments").value;
   var fetchUrl = '/data?maxComments=' + maxComments;
   fetch(fetchUrl).then(response => response.json()).then((comments) => {
     // Build the list of history comments.
-    const historyEl = document.getElementById('history');
     comments.forEach((comment) => {
-      historyEl.appendChild(createCommentElement(comment));
+    historyEl.appendChild(createCommentElement(comment));
     });
   });
 }
