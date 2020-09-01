@@ -12,12 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
+/** Adds a random image to the page. */
 function addRandomPic() {
   const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];
-  
   // Pick a random place
   const imageName = places[Math.floor(Math.random() * places.length)];
   // Add image to the page
@@ -33,6 +30,7 @@ function addRandomPic() {
   titleContainer.style.display = "inline-block";
 }
 
+/** Creates the image element. */
 function createImg(imageName) {
   const imgUrl = '/images/' + imageName + '.jpg';
   const imgElement = document.createElement('img');
@@ -43,9 +41,7 @@ function createImg(imageName) {
   return imgElement;
 }
 
-/**
- * Sets num of comments to be displayed when a page loads
- */
+/** Sets num of comments to be displayed when a page loads. */
 function load() {
   const urlParams = new URLSearchParams(window.location.search);
   const maxComments = urlParams.get('maxComments');
@@ -55,9 +51,7 @@ function load() {
   getComments();
 }
 
-/**
- * Fetches the new comment and builds the UI.
- */
+/** Fetches the new comment and builds the UI. */
 function getComments() {
   var maxComments = document.getElementById("maxComments").value;
   var fetchUrl = '/data?maxComments=' + maxComments;
