@@ -68,9 +68,18 @@ function createCommentElement(text) {
   return commentElement;
 }
 
-/** Clears out old comments and inserts the selected number of comments. */
-function changeCommentsNum(){
-  document.getElementById("history").innerHTML = "";
+/** Changes number of comments displayed. */
+function changeCommentsNum() {
+  clearComments();
   getComments();
 }
 
+/** Tells the server to delete all comments. */
+function deleteComments() {
+  fetch('/delete-data', {method: 'POST'}).then(() => clearComments());
+}
+
+/**Clears the displayed comments */
+function clearComments() {
+    document.getElementById("history").innerHTML = "";
+}
