@@ -83,3 +83,4 @@ function deleteComments() {
 function clearComments() {
     document.getElementById("history").innerHTML = "";
 }
+
