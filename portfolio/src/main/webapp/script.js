@@ -75,7 +75,7 @@ function getComments() {
   fetch(fetchUrl).then(response => response.json()).then((comments) => {
     // Build the list of history comments.
     comments.forEach((comment) => {
-      historyEl.appendChild(createCommentElement(comment));
+    historyEl.appendChild(createCommentElement(comment));
     });
   });
 }
