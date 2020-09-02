@@ -42,7 +42,8 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     int maxComments = Integer.parseInt(request.getParameter("maxComments"));
-    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
+    // TODO: sort by timestamp
+    Query query = new Query("Comment");
     List<Entity> results = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(maxComments));
     List<String> comments = new ArrayList<>();
     for (Entity entity : results) {
