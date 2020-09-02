@@ -12,9 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random picture to the page.
- */
+/** Adds a random picture to the page. */
 function addRandomPic() {
   const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];  
   // Pick a random place
@@ -44,15 +42,24 @@ function createImg(imageName) {
 
 /** Creates a map and adds it to the page. */
 function createMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 37.422, lng: -122.084},
-      zoom: 16
+  const GIVATAYIM = { lat: 32.08, lng: 34.80 };
+  const ISRAEL_BOUNDS = {
+    north: 33.29,
+    south: 29.50,
+    west: 34.27,
+    east: 35.47,
+  };
+  var map = new google.maps.Map(document.getElementById("map"), {
+    center: GIVATAYIM,
+    restriction: {
+      latLngBounds: ISRAEL_BOUNDS,
+      strictBounds: false
+    },
+    zoom: 14,
   });
 }
 
-/**
- * Adds comments and map to the page on page load
- */
+/** Adds comments and map to the page on page load. */
 function load() {
   //Sets num of comments to be displayed when a page loads
   const urlParams = new URLSearchParams(window.location.search);
@@ -65,9 +72,7 @@ function load() {
   createMap();
 }
 
-/**
- * Fetches the new comment and builds the UI.
- */
+/** Fetches the new comment and builds the UI. */
 function getComments() {
   const historyEl = document.getElementById('history');
   var maxComments = document.getElementById("maxComments").value;

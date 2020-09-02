@@ -23,7 +23,7 @@ body{
 }
 
 #image-container {
-  margin-top: 20px;
+  margin: 0px;
 }
 
 #comments-container {
@@ -32,7 +32,7 @@ body{
   background-color: rgb(225 237 211 / 54%);
   width: 800px;
   padding-left: 30px;
-  margin-top: 20px;
+  margin-top: 420px;
   line-height: 0.7;
 }
 
@@ -59,7 +59,34 @@ img {
 }
 
 #map {
+  text-align: center;
   border: thin solid black;
-  height: 500px;
-  width: 500px;
+  height: 367px;
+  width: 300px;
+}
+
+.container {
+    width: 800px;
+    padding: 20px;
+}
+
+.img-with-title {
+    float: left;
+    border: thin solid black;
+}
+
+.map-container {
+  position: relative;
+  float:left;
+  margin-left: 50px;
+  margin-top: auto
+}
+
+#map-title {
+  position: absolute;
+  bottom: 10px;
+  left: 20%;
+  color: white;
+  font-weight:bold;
+  background-color:#f1cd08c4
 }
