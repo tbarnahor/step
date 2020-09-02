@@ -69,7 +69,7 @@ function createCommentElement(comment) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
   const textElement = document.createElement('span');
-  textElement.innerText = comment.text;
+  textElement.innerText = comment;
   commentElement.appendChild(textElement);
   return commentElement;
 }

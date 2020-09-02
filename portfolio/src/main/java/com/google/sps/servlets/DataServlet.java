@@ -30,6 +30,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.sps.data.Comment;
+import com.google.appengine.api.datastore.Key;
+
 
 /** Servlet responsible for creating new comments and listing the comments. */
 @WebServlet("/data")
@@ -39,14 +41,16 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Query query = new Query("Comment");
-        PreparedQuery results =  datastore.prepare(query);
-        List<Key> commentsKeys = new ArrayList<>();
-        for (Entity entity : results.asIterable()) {
-        commentsKeys.add(entity.getKey());
+    int maxComments = Integer.parseInt(request.getParameter("maxComments"));
+    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
+    List<Entity> results = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(maxComments));
+    List<String> comments = new ArrayList<>();
+    for (Entity entity : results) {
+        String text = (String) entity.getProperty("text");
+        comments.add(text);
     }
     response.setContentType("application/json");
-    response.getWriter().println(new Gson().toJson(commentsKeys));
+    response.getWriter().println(new Gson().toJson(comments));
   }
 
   @Override
