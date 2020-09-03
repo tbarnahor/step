@@ -67,11 +67,6 @@ public class DataServlet extends HttpServlet {
     commentEntity.setProperty("timestamp", timestamp);
     datastore.put(commentEntity);
 
-    //If no maxComments was selected pass 1 as default
-    if (!maxComments.equals("5") && !maxComments.equals("10")) {
-        maxComments = "1";
-    }
-
     // Redirect back to the HTML page
     response.sendRedirect("/index.html?maxComments=" + maxComments);
   }

@@ -45,9 +45,7 @@ function createImg(imageName) {
 function load() {
   const urlParams = new URLSearchParams(window.location.search);
   const maxComments = urlParams.get('maxComments');
-  if (maxComments == '5' || maxComments == '10') {
-    document.getElementById("maxComments").value = maxComments;
-  }
+  document.getElementById("maxComments").value = maxComments;
   getComments();
 }
 
