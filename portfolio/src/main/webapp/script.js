@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /** Adds a random picture to the page. */
 function addRandomPic() {
     const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];  
@@ -31,6 +32,7 @@ function addRandomPic() {
     titleContainer.style.display = "inline-block";
 }
 
+/** Creates the image element. */
 function createImg(imageName) {
     const imgUrl = '/images/' + imageName + '.jpg';
     const imgElement = document.createElement('img');
@@ -140,11 +142,11 @@ function getComments() {
 }
 
 /** Creates an <li> element containing text. */
-function createCommentElement(text) {
+function createCommentElement(comment) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
   const textElement = document.createElement('span');
-  textElement.innerText = text;
+  textElement.innerText = comment;
   commentElement.appendChild(textElement);
   return commentElement;
 }

@@ -30,6 +30,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /** Servlet responsible for creating new comments and listing the comments. */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
@@ -38,34 +39,38 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    int maxComments = Integer.parseInt(request.getParameter("maxComments"));
-    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
+    int maxComments;
+    String maxCommentsParam = request.getParameter("maxComments");
+    if (maxCommentsParam == null){
+        maxComments = 0;
+    }
+    else {
+        maxComments = Integer.parseInt(maxCommentsParam);
+    }
+    // TODO: sort by timestamp
+    Query query = new Query("Comment");
     List<Entity> results = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(maxComments));
     List<String> comments = new ArrayList<>();
     for (Entity entity : results) {
-      comments.add((String) entity.getProperty("comment"));
+        String text = (String) entity.getProperty("text");
+        comments.add(text);
     }
-    response.setContentType("application/json;");
+    response.setContentType("application/json");
     response.getWriter().println(new Gson().toJson(comments));
   }
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form
-    String comment = request.getParameter("comment");
-    String maxComments = request.getParameter("num");
+    String text = request.getParameter("comment");
+    String maxComments = request.getParameter("numOfCom");
     long timestamp = System.currentTimeMillis();
 
     //Create entity for Datastore
     Entity commentEntity = new Entity("Comment");
-    commentEntity.setProperty("comment", comment);
+    commentEntity.setProperty("text", text);
     commentEntity.setProperty("timestamp", timestamp);
     datastore.put(commentEntity);
-
-    //If no maxComments was selected pass default
-    if (!maxComments.equals("5") && !maxComments.equals("10")) {
-        maxComments = "1";
-    }
 
     // Redirect back to the HTML page
     response.sendRedirect("/index.html?maxComments=" + maxComments);
