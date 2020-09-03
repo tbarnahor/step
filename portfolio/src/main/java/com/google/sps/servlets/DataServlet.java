@@ -41,10 +41,9 @@ public class DataServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     int maxComments;
     String maxCommentsParam = request.getParameter("maxComments");
-    if (maxCommentsParam == null){
+    if (maxCommentsParam == null) {
         maxComments = 0;
-    }
-    else {
+    } else {
         maxComments = Integer.parseInt(maxCommentsParam);
     }
     // TODO: sort by timestamp
