@@ -120,9 +120,7 @@ function load() {
     //Sets num of comments to be displayed when a page loads
     const urlParams = new URLSearchParams(window.location.search);
     const maxComments = urlParams.get('maxComments');
-    if (maxComments == '5' || maxComments == '10') {
-        document.getElementById("maxComments").value = maxComments;
-    }
+    document.getElementById("maxComments").value = maxComments;
     //Load comments and map
     getComments();
     createMap();
