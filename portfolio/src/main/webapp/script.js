@@ -24,6 +24,7 @@ function addRandomPic() {
     const location = document.getElementById('location-name')  
     location.innerText = imageName;
     const titleContainer = document.getElementById('location-title');
+    document.getElementById('map-title').innerText = "Can you find the right location tag on the map?";
     // Remove the previous image.
     imageContainer.innerHTML = '';
     imageContainer.appendChild(imgElement);
@@ -44,10 +45,10 @@ function createImg(imageName) {
 function createMap() {
     const GIVATAYIM = { lat: 32.08, lng: 34.80 };
     const ISRAEL_BOUNDS = {
-        north: 33.29,
-        south: 29.50,
-        west: 34.27,
-        east: 35.47,
+        north: 33.34,
+        south: 29.49,
+        west: 34.28,
+        east: 35.53,
     };
     var map = new google.maps.Map(document.getElementById("map"), {
         center: GIVATAYIM,
@@ -57,10 +58,12 @@ function createMap() {
         },
         zoom: 14,
     });
-    addMarkers(map);
+    addSpecialMarkers(map);
+    addLocations(map);
 }
 
-function addMarkers(map) {
+/** Adds to the map specific markers. */
+function addSpecialMarkers(map) {
     var iconBase = 'http://maps.google.com/mapfiles/kml/pushpin/';
     var iconSize = new google.maps.Size(50, 50)
     var locations = [
@@ -98,6 +101,17 @@ function addMarkers(map) {
         });
     }
 }
+
+/** Fetches Israel locations data from the server and displays it in a map. */
+function addLocations(map) {
+  fetch('/location-data').then(response => response.json()).then((israelLocations) => {
+    israelLocations.forEach((location) => {
+      new google.maps.Marker(
+          {position: {lat: location.lat, lng: location.lng}, map: map});
+    });
+  });
+}
+
 
 /** Adds comments and map to the page on page load. */
 function load() {
