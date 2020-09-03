@@ -12,12 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
+/** Adds a random image to the page. */
 function addRandomPic() {
   const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];
-  
   // Pick a random place
   const imageName = places[Math.floor(Math.random() * places.length)];
   // Add image to the page
@@ -33,6 +30,7 @@ function addRandomPic() {
   titleContainer.style.display = "inline-block";
 }
 
+/** Creates the image element. */
 function createImg(imageName) {
   const imgUrl = '/images/' + imageName + '.jpg';
   const imgElement = document.createElement('img');
@@ -43,15 +41,21 @@ function createImg(imageName) {
   return imgElement;
 }
 
-/**
- * Fetches the new comment and builds the UI.
- */
+/** Sets num of comments to be displayed when a page loads. */
+function load() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const maxComments = urlParams.get('maxComments');
+  document.getElementById("maxComments").value = maxComments;
+  getComments();
+}
+
+/** Fetches the new comment and builds the UI. */
 function getComments() {
+  const historyEl = document.getElementById('history');
   var maxComments = document.getElementById("maxComments").value;
   var fetchUrl = '/data?maxComments=' + maxComments;
   fetch(fetchUrl).then(response => response.json()).then((comments) => {
     // Build the list of history comments.
-    const historyEl = document.getElementById('history');
     comments.forEach((comment) => {
       historyEl.appendChild(createCommentElement(comment));
     });
@@ -59,11 +63,11 @@ function getComments() {
 }
 
 /** Creates an <li> element containing text. */
-function createCommentElement(text) {
+function createCommentElement(comment) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
   const textElement = document.createElement('span');
-  textElement.innerText = text;
+  textElement.innerText = comment;
   commentElement.appendChild(textElement);
   return commentElement;
 }
