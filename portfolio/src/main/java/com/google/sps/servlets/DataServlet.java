@@ -29,8 +29,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.google.sps.data.Comment;
-import com.google.appengine.api.datastore.Key;
 
 
 /** Servlet responsible for creating new comments and listing the comments. */
@@ -41,7 +39,14 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    int maxComments = Integer.parseInt(request.getParameter("maxComments"));
+    int maxComments;
+    String maxCommentsParam = request.getParameter("maxComments");
+    if (maxCommentsParam == null){
+        maxComments = 0;
+    }
+    else {
+        maxComments = Integer.parseInt(maxCommentsParam);
+    }
     // TODO: sort by timestamp
     Query query = new Query("Comment");
     List<Entity> results = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(maxComments));
