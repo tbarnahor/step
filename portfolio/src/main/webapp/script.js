@@ -43,9 +43,89 @@ function createImg(imageName) {
   return imgElement;
 }
 
-/**
- * Fetches the new comment and builds the UI.
- */
+/** Creates a map and adds it to the page. */
+function createMap() {
+    const GIVATAYIM = { lat: 32.08, lng: 34.80 };
+    const ISRAEL_BOUNDS = {
+        north: 33.34,
+        south: 29.49,
+        west: 34.28,
+        east: 35.53,
+    };
+    var map = new google.maps.Map(document.getElementById("map"), {
+        center: GIVATAYIM,
+        restriction: {
+        latLngBounds: ISRAEL_BOUNDS,
+        strictBounds: false
+        },
+        zoom: 14,
+    });
+    addSpecialMarkers(map);
+    addLocations(map);
+}
+
+/** Adds to the map specific markers. */
+function addSpecialMarkers(map) {
+    var iconBase = 'http://maps.google.com/mapfiles/kml/pushpin/';
+    var iconSize = new google.maps.Size(50, 50)
+    var locations = [
+        {
+            position: new google.maps.LatLng(32.7577, 35.2207),
+            title: "Alon Hagalil",
+            description: "My hometown",
+            icon: {
+                url: iconBase + 'pink-pushpin.png',
+                scaledSize: iconSize
+            }
+        },
+        {
+            position: new google.maps.LatLng(32.0722 , 34.8089),
+            title: "Givatayim",
+            description: "The city I currently live in",
+            icon: {
+                url: iconBase + 'wht-pushpin.png',
+                scaledSize: iconSize
+            }
+        }
+    ];
+    // Create markers.
+    for (var i = 0; i < locations.length; i++) {
+        const marker = new google.maps.Marker({
+            title: locations[i].title,
+            position: locations[i].position,
+            description: locations[i].description,
+            icon: locations[i].icon,
+            map: map
+        });
+        const infoWindow = new google.maps.InfoWindow({content: marker.description});
+        marker.addListener('click', () => {
+            infoWindow.open(map, marker);
+        });
+    }
+}
+
+/** Fetches Israel locations data from the server and displays it in a map. */
+function addLocations(map) {
+  fetch('/location-data').then(response => response.json()).then((israelLocations) => {
+    israelLocations.forEach((location) => {
+      new google.maps.Marker(
+          {position: {lat: location.lat, lng: location.lng}, map: map});
+    });
+  });
+}
+
+/** Adds comments and map to the page on page load. */
+function load() {
+    //Sets num of comments to be displayed when a page loads
+    const urlParams = new URLSearchParams(window.location.search);
+    const maxComments = urlParams.get('maxComments');
+    document.getElementById("maxComments").value = maxComments;
+    //Load comments and map
+    getComments();
+    createMap();
+}
+
+/** Fetches the new comment and builds the UI. */
 function getComments() {
   const historyEl = document.getElementById('history');
   var maxComments = document.getElementById("maxComments").value;
@@ -74,3 +154,40 @@ function changeCommentsNum(){
   getComments();
 }
 
+/** Deletes all comments. */
+function deleteComments() {
+  fetch('/delete-data', {method: 'POST'}).then(() => clearComments());
+}
+
+/** Clears out the displayed comments. */
+function clearComments() {
+    document.getElementById("history").innerHTML = "";
+}
+
+// Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages':['corechart']});
+// Set a callback to run when the Google Visualization API is loaded.
+google.charts.setOnLoadCallback(drawChart);
+
+/** Creates a chart and adds it to the page. */
+function drawChart() {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'Activity');
+    data.addColumn('number', 'Hours');
+    data.addRows([
+          ['Sleep', 7],
+          ['Sport', 2],
+          ['Work', 9],
+          ['House chores', 1],
+          ['Family and friends', 3],
+          ['Others', 2]
+        ]);
+    const options = {
+        'title': 'An average day',
+        'width':400,
+        'height':200
+    };
+    const chart = new google.visualization.PieChart(
+        document.getElementById('chart-container'));
+        chart.draw(data, options);
+}
