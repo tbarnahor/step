@@ -83,10 +83,10 @@ img {
 }
 
 #map-title {
-  position: absolute;
-  bottom: 10px;
-  left: 20%;
+  position: center;
   color: white;
   font-weight:bold;
-  background-color:#f1cd08c4
+  background-color:#f1cd08c4;
+  font-size:14px;
+  text-align:center;
 }
