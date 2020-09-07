@@ -33,10 +33,7 @@ body{
   width: 800px;
   padding-left: 30px;
   margin-top: 20px;
-<<<<<<< Updated upstream
-=======
   margin-bottom: 200px;
->>>>>>> Stashed changes
   line-height: 0.7;
 }
 
@@ -61,8 +58,6 @@ img {
     margin-left: -27px;
     margin-right: 30px;
     font-size: 14px;
-<<<<<<< Updated upstream
-=======
 }
 
 #map {
@@ -108,5 +103,4 @@ hr {
 
 #chart-container {
   margin-top: -15px;
->>>>>>> Stashed changes
 }
