@@ -184,8 +184,8 @@ function drawChart() {
         ]);
     const options = {
         'title': 'An average day',
-        'width':400,
-        'height':200
+        'width':450,
+        'height':300
     };
     const chart = new google.visualization.PieChart(
         document.getElementById('chart-container'));
