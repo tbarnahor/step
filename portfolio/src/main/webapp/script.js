@@ -12,12 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
+/** Adds a random image to the page. */
 function addRandomPic() {
   const places = ['Alon Hagalil', 'Tel Aviv', 'Mitzpe Ramon', 'Hasbani river', 'Jerusalem', 'Tzipori stream', 'Habonim beach'];
-  
   // Pick a random place
   const imageName = places[Math.floor(Math.random() * places.length)];
   // Add image to the page
@@ -33,6 +30,7 @@ function addRandomPic() {
   titleContainer.style.display = "inline-block";
 }
 
+/** Creates the image element. */
 function createImg(imageName) {
   const imgUrl = '/images/' + imageName + '.jpg';
   const imgElement = document.createElement('img');
@@ -43,9 +41,15 @@ function createImg(imageName) {
   return imgElement;
 }
 
-/**
- * Fetches the new comment and builds the UI.
- */
+/** Sets num of comments to be displayed when a page loads. */
+function load() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const maxComments = urlParams.get('maxComments');
+  document.getElementById("maxComments").value = maxComments;
+  getComments();
+}
+
+/** Fetches the new comment and builds the UI. */
 function getComments() {
   const historyEl = document.getElementById('history');
   var maxComments = document.getElementById("maxComments").value;
@@ -59,18 +63,28 @@ function getComments() {
 }
 
 /** Creates an <li> element containing text. */
-function createCommentElement(text) {
+function createCommentElement(comment) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
   const textElement = document.createElement('span');
-  textElement.innerText = text;
+  textElement.innerText = comment;
   commentElement.appendChild(textElement);
   return commentElement;
 }
 
-/** Clears out old comments and inserts the selected number of comments. */
-function changeCommentsNum(){
-  document.getElementById("history").innerHTML = "";
+/** Changes number of comments displayed. */
+function changeCommentsNum() {
+  clearComments();
   getComments();
+}
+
+/** Deletes all comments. */
+function deleteComments() {
+  fetch('/delete-data', {method: 'POST'}).then(() => clearComments());
+}
+
+/** Clears out the displayed comments. */
+function clearComments() {
+    document.getElementById("history").innerHTML = "";
 }
 
