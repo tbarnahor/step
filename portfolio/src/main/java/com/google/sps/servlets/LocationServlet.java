@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Returns UFO data as a JSON array, e.g. [{"lat": 38.4404675, "lng": -122.7144313}] */
+/** Returns Location data as a JSON array, e.g. [{"lat": 38.4404675, "lng": -122.7144313}] */
 @WebServlet("/location-data")
 public class LocationServlet extends HttpServlet {
 
@@ -37,11 +37,17 @@ public class LocationServlet extends HttpServlet {
 
     Scanner scanner = new Scanner(getServletContext().getResourceAsStream("/WEB-INF/location-data.csv"));
     while (scanner.hasNextLine()) {
-      String line = scanner.nextLine();
-      String[] cells = line.split(",");
-      double lat = Double.parseDouble(cells[0]);
-      double lng = Double.parseDouble(cells[1]);
-      israelLocations.add(new Location(lat, lng));
+        String line = scanner.nextLine();
+        String[] cells = line.split("\\s*,\\s*");
+        if (cells.length == 2) {
+            try {
+                double lat = Double.parseDouble(cells[0]);
+                double lng = Double.parseDouble(cells[1]);
+                israelLocations.add(new Location(lat, lng));
+            } catch (NumberFormatException e) {
+              continue;
+            }
+        }
     }
     scanner.close();
   }
