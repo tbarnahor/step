@@ -47,6 +47,7 @@ function load() {
   const maxComments = urlParams.get('maxComments');
   document.getElementById("maxComments").value = maxComments;
   getComments();
+  loadCharts();
 }
 
 /** Fetches the new comment and builds the UI. */
@@ -88,10 +89,12 @@ function clearComments() {
     document.getElementById("history").innerHTML = "";
 }
 
-// Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
-// Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawChart);
+function loadCharts() {
+    // Loads the Visualization API and the corechart package.
+    google.charts.load('current', {'packages':['corechart']});
+    // Sets a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+}
 
 /** Creates a chart and adds it to the page. */
 function drawChart() {
