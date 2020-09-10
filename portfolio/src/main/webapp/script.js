@@ -124,6 +124,7 @@ function load() {
     //Load comments and map
     getComments();
     createMap();
+    loadCharts();
 }
 
 /** Fetches the new comment and builds the UI. */
@@ -164,3 +165,34 @@ function deleteComments() {
 function clearComments() {
     document.getElementById("history").innerHTML = "";
 }
+
+function loadCharts() {
+    // Loads the Visualization API and the corechart package.
+    google.charts.load('current', {'packages':['corechart']});
+    // Sets a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+}
+
+/** Creates a chart and adds it to the page. */
+function drawChart() {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'Activity');
+    data.addColumn('number', 'Hours');
+    data.addRows([
+          ['Sleep', 7],
+          ['Sport', 2],
+          ['Work', 9],
+          ['House chores', 1],
+          ['Family and friends', 3],
+          ['Others', 2]
+        ]);
+    const options = {
+        'title': 'An average day',
+        'width':450,
+        'height':300
+    };
+    const chart = new google.visualization.PieChart(
+        document.getElementById('chart-container'));
+        chart.draw(data, options);
+}
+

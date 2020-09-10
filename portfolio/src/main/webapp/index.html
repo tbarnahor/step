@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkKmeoxNLA5pk3mbQHvtVW_kHW74feUy0"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkKmeoxNLA5pk3mbQHvtVW_kHW74feUy0"></script>
   </head>
@@ -35,6 +37,12 @@
             <div id="map-title">This is where I live. Zoom out to see more!</div>
             </div>
         </div>
+
+        <hr>
+        <p>Look at this cool chart:<p/>
+        <div id="chart-container"></div>
+        <hr style="margin-top:10px">
+
         <div id= "comments-container">
             <p>Please leave a comment:</p>
             <form action="/data" method="POST">
@@ -48,6 +56,7 @@
                     <option value="10">10</option>
                     </select>
             </form>
+
             <ul id="history"></ul>
             <button onclick="deleteComments()">Delete</button><br><br>
         </div>

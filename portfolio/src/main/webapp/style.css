@@ -32,7 +32,7 @@ body{
   background-color: rgb(225 237 211 / 54%);
   width: 800px;
   padding-left: 30px;
-  margin-top: 420px;
+  margin-top: 20px;
   margin-bottom: 200px;
   line-height: 0.7;
 }
@@ -89,4 +89,16 @@ img {
   background-color:#f1cd08c4;
   font-size:14px;
   text-align:center;
+}
+
+hr {
+  margin-top: 400px;
+  height:2px;
+  border-width:0.05px;
+  color:black;
+  background-color:black
+}
+
+#chart-container {
+  margin-top: -15px;
 }
