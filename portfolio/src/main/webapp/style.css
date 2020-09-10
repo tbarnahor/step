@@ -23,7 +23,7 @@ body{
 }
 
 #image-container {
-  margin-top: 20px;
+  margin: 0px;
 }
 
 #comments-container {
@@ -46,10 +46,8 @@ img {
   background-color: rgba(216, 204, 173, 0.658);
   border: thin solid black;
   width: 298px;
-  margin-top: -6px;
   text-align: center;
 }
-
 
 #history li {
     list-style: none;
