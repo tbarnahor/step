@@ -1,0 +1,602 @@
+[33mcommit 4ab665063c1db25b4a619ffda930e474f424fe0d[m[33m ([m[1;36mHEAD -> [m[1;32mstep[m[33m)[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Mon Aug 24 13:57:11 2020 +0000
+
+    add a comments feature
+
+[33mcommit f0c1b8b155174ca62dbbaef62419692387b7758c[m[33m ([m[1;31morigin/step[m[33m)[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Mon Aug 24 06:11:29 2020 +0000
+
+    modify DataServlet to return hard-coded JSON data and fetch that JSON
+
+[33mcommit 4533f6c01daacde454bbd1aec16186636f3dba6d[m[33m ([m[1;31morigin/master[m[33m)[m
+Merge: f992cfc efa36a3
+Author: tbarnahor <69234213+tbarnahor@users.noreply.github.com>
+Date:   Thu Aug 20 15:45:09 2020 +0300
+
+    Merge pull request #4 from tbarnahor/step
+    
+    Servlet tutorial
+
+[33mcommit efa36a3b8a3e36110b4410bce411b5dadbd09c43[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Thu Aug 20 12:43:45 2020 +0000
+
+    fetch content from server to protfolio page
+
+[33mcommit 36c50c6aa993e7f45e3056773687be4cdd11e203[m
+Merge: cd5a1cb f992cfc
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Wed Aug 19 07:36:56 2020 +0000
+
+    Merge branch 'master' of https://github.com/tbarnahor/step into step
+
+[33mcommit cd5a1cb54b841aa7caf1e951a87215ef024c3e5e[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Wed Aug 19 07:34:38 2020 +0000
+
+    modify dataServlet to print 'Hello Tal'
+
+[33mcommit f992cfc885d261c7f2218b51b0a7d57bd002806f[m
+Merge: 289634d 10c7ec5
+Author: tbarnahor <69234213+tbarnahor@users.noreply.github.com>
+Date:   Wed Aug 19 09:38:54 2020 +0300
+
+    Merge pull request #3 from tbarnahor/step
+    
+    deploy live server
+
+[33mcommit 10c7ec54efe6063fb91f7ce42d933bb71d651284[m
+Merge: 8dc58c7 289634d
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Tue Aug 18 14:08:33 2020 +0000
+
+    Merge branch 'master' of https://github.com/tbarnahor/step into step
+
+[33mcommit 8dc58c78eac27970d9667e29a93cdac49e08a9ab[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Tue Aug 18 14:07:11 2020 +0000
+
+    update project id
+
+[33mcommit 7d85ee762b78f244d20f30848e6040c5bbd57cce[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Tue Aug 18 14:05:03 2020 +0000
+
+    update project id in pom.xml for live server deployment. Compress photos for quicker upload
+
+[33mcommit 289634d6fb46f57c4b0c1f8778d1bf2e41dbeedc[m
+Merge: fc062bb 5dfd24f
+Author: tbarnahor <69234213+tbarnahor@users.noreply.github.com>
+Date:   Tue Aug 18 15:02:27 2020 +0300
+
+    Merge pull request #2 from tbarnahor/step
+    
+    Add my protfolio
+
+[33mcommit 5dfd24fe07eb88e32fec5266a788f1d72b7d3185[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 7064247 fc062bb
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Tue Aug 18 10:25:44 2020 +0000
+
+    Merge branch 'master' of https://github.com/tbarnahor/step
+    
+    commiting my protfolio
+    
+    ^X
+
+[33mcommit 706424739653b2fd367ffccda72b744922bff963[m
+Author: Tal Barnahor <talbarnahor@gmail.com>
+Date:   Tue Aug 18 08:19:05 2020 +0000
+
+    Make a basic protfolio- list of basic facts and some randomly chosen pictures
+
+[33mcommit fc062bbb7b83db100fb1ee9694f1d2175aecb470[m
+Merge: 0218d07 2c5aadf
+Author: szwbar <szwbar@gmail.com>
+Date:   Sun Aug 16 16:26:33 2020 +0300
+
+    Merge pull request #1 from tbarnahor/TalBarnahorDev
+    
+    Update the     README.md file to describe the     repo.
+
+[33mcommit 2c5aadf33dabb0290a71e5a737f9c810b88d9010[m
+Author: Tal <talbarnahor@gmail.com>
+Date:   Wed Aug 5 10:13:35 2020 +0300
+
+    Update the     README.md file to describe the     repo.
+
+[33mcommit 0218d07ca16ad8ead819a051f69edb563d030f86[m
+Merge: 509d79f cc2d92c
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Mon Jun 22 15:06:30 2020 -0700
+
+    Merge pull request #42 from googleinterns/tdd_instructions
+    
+    Tdd instructions
+
+[33mcommit cc2d92c0d4bca1edcb5ff1850d5d40cf18503c3f[m
+Author: apicard <apicard@google.com>
+Date:   Wed Jun 17 17:18:04 2020 -0700
+
+    Reverse logic for 5th intern-added test to be consistent with the logic on the non-optional case.
+
+[33mcommit 73dd2cbf10851077087c6945d209abb3f0e4dd65[m
+Author: apicard <apicard@google.com>
+Date:   Wed Jun 17 17:09:01 2020 -0700
+
+    Add reminder to switch to Java before blobstore walkthrough.
+
+[33mcommit d7ac8170c14570c242e530b5902a55e972c36bc0[m
+Author: apicard <apicard@google.com>
+Date:   Wed Jun 17 16:59:35 2020 -0700
+
+    Remove reference to SubtractionServlet.java to avoid interns doing POST instead of GET.
+
+[33mcommit 509d79f2c71cd5ed28047e736d308649591004fb[m
+Merge: 0b006b9 b66cba8
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Wed Jun 10 22:23:14 2020 -0700
+
+    Merge pull request #39 from googleinterns/tdd_frontend_fix
+    
+    Add a reminder about adding new fields to MeetingRequest
+
+[33mcommit b66cba88dafe3ddeea15e45fa9043e0189dd63bc[m
+Author: apicard <apicard@google.com>
+Date:   Wed Jun 10 22:21:52 2020 -0700
+
+    Add a reminder about adding new fields to MeetingRequest
+
+[33mcommit 0b006b962f7dec3cce8fcec22524daef28660576[m
+Merge: a20c05f 1debb2b
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue Jun 9 23:21:47 2020 -0700
+
+    Merge pull request #38 from googleinterns/tdd_frontend_fix
+    
+    Add optional attendee support in the frontend.
+
+[33mcommit a20c05fc7c79c6018cf96c588fa4013551b058d5[m
+Merge: 1c9e36a d26700b
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue Jun 9 23:21:09 2020 -0700
+
+    Merge pull request #21 from devonwasson/patch-1
+    
+    Modify SPS to STEP
+
+[33mcommit 1c9e36a7eb87ed7c81dc4d08c03059f8e27eb3fd[m
+Merge: 0d0aa0a 0a93099
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue Jun 9 23:20:10 2020 -0700
+
+    Merge pull request #24 from ljfranklin/pr-cache-clear-docs
+    
+    Inline hard-reload instructions in walkthru
+
+[33mcommit 0d0aa0a4b0da0cbae50545f7b69263d41b2dae9c[m
+Merge: 640ff5d 4da3cec
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue Jun 9 23:17:59 2020 -0700
+
+    Merge pull request #37 from limli/master
+    
+    Fix typo in package name
+
+[33mcommit 1debb2bcacb2ab323a4cf0b6e218b892cb488f6d[m
+Author: apicard <apicard@google.com>
+Date:   Tue Jun 9 23:16:37 2020 -0700
+
+    Add optional attendee support in the frontend.
+
+[33mcommit 4da3cecbaf6a68dbbb3f33efad993b0ed98a3e18[m
+Author: limli <39252823+limli@users.noreply.github.com>
+Date:   Thu Jun 4 15:19:03 2020 +0800
+
+    Fix typo in package name
+
+[33mcommit 0a93099e8520315a075881175cb7c3f36459271d[m
+Author: Lyle Franklin <lylefranklin@google.com>
+Date:   Wed May 27 09:04:39 2020 -0400
+
+    Inline hard-reload instructions in walkthru
+    
+    - The wiki page the guide links to caused some confusion for our group,
+      e.g. Ctrl + F5 on a chromebook takes a screenshot rather than hard
+      reloading
+    - Although opening the Dev Tools is a bit more involved, doing Empty
+      Cache and Hard Reload will also clear assets that are downloaded after
+      page load (e.g. lazy loaded scripts) while just a Hard Reload will
+      only re-download assets which are explicitly listed in the DOM
+      - https://stackoverflow.com/a/14969509
+
+[33mcommit 640ff5d6c6484da82f1494d04d0490861c696fa6[m
+Merge: ba483cd bc0dd08
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue May 26 22:07:42 2020 -0700
+
+    Merge pull request #23 from googleinterns/java8instructions
+    
+    Transfer java8 instructions from SPS repo
+
+[33mcommit bc0dd083aa0023799521ecdc1b6abbf8915c88c0[m
+Author: apicard <apicard@google.com>
+Date:   Tue May 26 17:28:31 2020 -0700
+
+    Transfer java8 instructions from SPS repo
+
+[33mcommit d26700bf6c58048a761c1ca0095a51cdaa2f6fb5[m
+Author: Devon Wasson <devonwasson@gmail.com>
+Date:   Thu May 21 00:21:50 2020 -0400
+
+    Modify SPS to STEP
+
+[33mcommit ba483cd3cfa752e7d4f8c1c9f9afd28bb93b133f[m
+Merge: 24a5094 8260d4c
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Wed May 20 13:15:57 2020 -0700
+
+    Merge pull request #19 from KevinWorkman/new-mvn-plugin
+    
+    Remove references to the old Maven plugin from pom.xml.
+
+[33mcommit 8260d4c207cf555f4a83a42b43c78e3f5d39084a[m
+Author: Kevin Workman <kevinaworkman@gmail.com>
+Date:   Wed May 20 12:12:04 2020 -0700
+
+    Remove references to the old Maven plugin from pom.xml.
+
+[33mcommit 24a5094b0d68039a95211523d57b50227db6b9ea[m
+Merge: c6a72af da5ecaa
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Wed May 20 11:51:07 2020 -0700
+
+    Merge pull request #18 from googleinterns/nicki
+    
+    Change collaborator to host instead of PA
+
+[33mcommit da5ecaa0bd09531ed039e5ad461d8708e8147273[m
+Author: Nicki Anselmo <nickianselmo@gmail.com>
+Date:   Wed May 20 13:27:24 2020 -0500
+
+    Fixed line width and changed SPS reference to STEP
+
+[33mcommit 3818ea5405694c2af6b5b0f10bfaff417e8ec182[m
+Author: Nicki Anselmo <nickianselmo@gmail.com>
+Date:   Wed May 20 11:01:27 2020 -0500
+
+    Change collaborator to host instead of PA
+
+[33mcommit c6a72afdf18b55d2539765a38b2bf53eb47fb328[m
+Merge: 55d4518 d1993f8
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue May 19 13:34:07 2020 -0700
+
+    Merge pull request #17 from KevinWorkman/java-8
+    
+    Update all projects to use the new Maven plugin.
+
+[33mcommit d1993f89698cc9a7f1b523c0674d11717d6b1edb[m
+Merge: 55dd57e 55d4518
+Author: Kevin Workman <kevinaworkman@gmail.com>
+Date:   Tue May 19 13:15:51 2020 -0700
+
+    Merge branch 'master' into java-8
+
+[33mcommit 55dd57e0aebf6c2ed0245ba47b55faa557bc03df[m
+Author: Kevin Workman <kevinaworkman@gmail.com>
+Date:   Tue May 19 12:59:06 2020 -0700
+
+    Update all projects to use the new Maven plugin.
+
+[33mcommit 55d4518b5d539b2bdfb7c199d68a1cc91f806189[m
+Merge: e6b02a8 e0f9f1c
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Mon May 18 21:32:05 2020 -0700
+
+    Merge pull request #16 from andreahu12/deploy-fix
+    
+    Use non-deprecated appengine maven plugin for deploying portfolio
+
+[33mcommit e0f9f1c46b1e528fb4df1a248ef2a02491551d29[m
+Author: Andrea <andrea.hu.95@gmail.com>
+Date:   Sun May 17 20:57:50 2020 -0700
+
+    Use non-deprecated appengine maven plugin for deploying portfolio
+
+[33mcommit e6b02a8d6a2f862747e24b01b1f47b92b341ec71[m
+Merge: 5f0430e a6d4770
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Sun May 17 17:27:30 2020 -0700
+
+    Merge pull request #15 from KevinWorkman/blobstore
+    
+    Ensure Blobstore uploads work on on Cloud Shell's localhost preview.
+
+[33mcommit 5f0430e211908508ba2c4f86b8d3522863c786b9[m
+Merge: e3e46de 4482c05
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Sun May 17 17:26:36 2020 -0700
+
+    Merge pull request #14 from KevinWorkman/java-8
+    
+    Add instructions to set Java 8 as the default Java version.
+
+[33mcommit a6d47700d12992548e595e231db962fe162ef0a0[m
+Author: Kevin Workman <kevinaworkman@gmail.com>
+Date:   Sat May 16 20:39:20 2020 -0700
+
+    Ensure Blobstore uploads work on on Cloud Shell's localhost preview.
+
+[33mcommit 4482c05ca94d336995e076a28ad05da0641aaec5[m
+Author: Kevin Workman <kevinaworkman@gmail.com>
+Date:   Sat May 16 20:05:39 2020 -0700
+
+    Add instructions to set Java 8 as the default Java version.
+
+[33mcommit e3e46dee251319d4ce585eda4caa29fe8a5aa19e[m
+Merge: 110b7c6 bd6fdda
+Author: Nicki Anselmo <nickianselmo@gmail.com>
+Date:   Fri May 15 19:10:35 2020 -0500
+
+    Merge pull request #13 from googleinterns/renumber_weeks
+    
+    Renumber directories
+
+[33mcommit bd6fdda6da9352892dfa40862ab9844c2afa3948[m
+Author: apicard <apicard@google.com>
+Date:   Fri May 15 17:00:38 2020 -0700
+
+    Renumber directories
+
+[33mcommit 110b7c6ed74d2f4755dcaf2350260e941721664e[m
+Merge: 3e10973 cff0300
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Fri May 15 13:43:02 2020 -0700
+
+    Merge pull request #9 from lazau-g/master
+    
+    Clarify shoutbox-v3 URL path.
+
+[33mcommit 3e109737f3a807e48d68500e3104aa3ce0062617[m
+Merge: cde919c c2f83bf
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Fri May 15 13:42:23 2020 -0700
+
+    Merge pull request #10 from lazau-g/blobstore_helloworld_example
+    
+    Use formInputElementName parameter in blobstore hello-world example
+
+[33mcommit cde919c3184e670cd53526b3dbfec2f7d6024489[m
+Merge: 98f5f8b 80b365a
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Fri May 15 13:41:47 2020 -0700
+
+    Merge pull request #8 from SuyashLakhotia/patch-1
+    
+    Replace references to SPS
+
+[33mcommit 98f5f8ba3bfee23e3db37960a42a99d153c422b7[m
+Merge: 4e7bb0b e61bd17
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Fri May 15 13:41:29 2020 -0700
+
+    Merge pull request #12 from lazau-g/helloworld_fix
+    
+    Fix hello-world blobstore FormHandlerServlet's getUploadedFileUrl
+
+[33mcommit 4e7bb0b5a684969f7610d7d0c554bdcd71e5041f[m
+Merge: 6a1d84e d484f17
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Fri May 15 13:40:32 2020 -0700
+
+    Merge pull request #7 from googleinterns/check_links
+    
+    Check links
+
+[33mcommit e61bd176ea8630b4c802d45e6faedd0b871e771c[m
+Author: Thinsit (Laza) Upatising <lazau+g@google.com>
+Date:   Fri May 15 12:05:43 2020 -0700
+
+    Fix hello-world blobstore FormHandlerServlet's getUploadedFileUrl
+    
+    The URL returned by AppEngine's ImageService when running via devserver
+    specifies 'losthost:8080' as the host. Browsers are unable to resolve
+    'localhost:8080' as the application is running in Google Cloud Shell.
+    
+    To support running in Google Cloud Shell, we therefore use the relative
+    path for images.
+
+[33mcommit c2f83bfd030cc037e70744c6db6c71ce9537542e[m
+Author: Thinsit (Laza) Upatising <lazau+g@google.com>
+Date:   Fri May 15 10:35:34 2020 -0700
+
+    Use formInputElementName parameter in blobstore hello-world example
+
+[33mcommit cff03005a15d0b5041254049a6a2c7ed0167e9d0[m
+Author: Thinsit (Laza) Upatising <lazau+g@google.com>
+Date:   Fri May 15 10:07:12 2020 -0700
+
+    Clarify shoutbox-v3 URL path.
+    
+    Navigating to '/' for the shoutbox-v3 app yields a 403. The actual
+    application lives at '/shoutbox'.
+
+[33mcommit 80b365a3eae92b4d284b7260d48555e31cb89266[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:38:55 2020 +0800
+
+    Update github-setup-walkthrough.md
+
+[33mcommit 202c8a1bfffe8cc3b193398b5ebe8f1cd865a42b[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:36:43 2020 +0800
+
+    Update comments-walkthrough.md
+
+[33mcommit 2a046d93278bd1f897555468f813ef79e5c84d2d[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:36:11 2020 +0800
+
+    Update intro-walkthrough.md
+
+[33mcommit feffa81f59dde66bb61e4b7d2b312217b76ce84d[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:35:40 2020 +0800
+
+    Update portfolio-walkthrough.md
+
+[33mcommit 2a6a4b8fbff6482bcd99ee47116ecae79b22988a[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:35:00 2020 +0800
+
+    Update portfolio-walkthrough.md
+
+[33mcommit 5f709eb60b1fc568498bc6ae0c8fedd7ffa14760[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:32:57 2020 +0800
+
+    Update github-setup-walkthrough.md
+
+[33mcommit 95987a16d5d4633389509678ea9ca75b7ba124e4[m
+Author: Suyash Lakhotia <suyashlakhotia@gmail.com>
+Date:   Fri May 15 20:30:51 2020 +0800
+
+    Update github-setup-walkthrough.md
+
+[33mcommit d484f1750b6233a0d1eb047f316bb302b24d275b[m
+Merge: 9e0a0a7 6a1d84e
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 23:50:22 2020 -0700
+
+    Merge remote-tracking branch 'origin/master' into check_links
+
+[33mcommit 6a1d84ee092fd045206b235da923fdd3d83ccb11[m
+Merge: 0bb13f7 ae6b8d2
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Thu May 14 23:38:31 2020 -0700
+
+    Merge pull request #5 from googleinterns/week3_and_4_tweaks
+    
+    Week 3 and 4 tweaks
+
+[33mcommit 9e0a0a79b12304e1fa09dbc5d3423990b33b75c0[m
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 23:30:01 2020 -0700
+
+    Add a script to check various links
+
+[33mcommit 0bb13f79bac50b9cadd22c074f11065aa9c50dec[m
+Merge: bdbf41d 784bf18
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Thu May 14 18:19:31 2020 -0700
+
+    Merge pull request #6 from lazau-g/fix3
+    
+    Fix step-1-servlets-walkthrough.md return instructions.
+
+[33mcommit ae6b8d2e78cb0997e45bfbf3c2a37cdd27018b56[m
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 17:00:51 2020 -0700
+
+    Add a basic test for MeetingRequest.java
+
+[33mcommit d27192fef10c3e2b61b37e7c8113ad610410bd22[m
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 16:39:48 2020 -0700
+
+    Check that optional attendees are not also mandatory
+
+[33mcommit 784bf184fa5ccc36518c0b09b46c97efb29351e1[m
+Author: Thinsit (Laza) Upatising <lazau+g@google.com>
+Date:   Thu May 14 14:53:09 2020 -0700
+
+    Fix step-1-servlets-walkthrough.md return instructions.
+
+[33mcommit caae70cf0bde31e6012f8e956c1cc4f14bd5bb65[m
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 12:14:58 2020 -0700
+
+    Added missing comma
+
+[33mcommit 4aea4de1ebed87abe6725516f85fc98f637f51f2[m
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 12:12:49 2020 -0700
+
+    Clarify the instructions for the user-written tests.
+
+[33mcommit d2f91741737bb1f667ba4a09638cdd46bbba5210[m
+Author: apicard <apicard@google.com>
+Date:   Thu May 14 12:10:08 2020 -0700
+
+    Fix typo in calendar walkthrough.
+
+[33mcommit 27289712d1d2b252187f86b529fd908a86caf6be[m
+Author: apicard <apicard@google.com>
+Date:   Wed May 13 18:49:16 2020 -0700
+
+    Add test-writing task and optional challenge to TDD project.
+
+[33mcommit 1cec1c77b4ea9d5f7447ccde05f9004f0d56f72c[m
+Author: apicard <apicard@google.com>
+Date:   Wed May 13 17:09:55 2020 -0700
+
+    Update week 3 instructions to require two libraries.
+
+[33mcommit bdbf41db8635ad4ee23463ae0a323592e52547ce[m
+Merge: 32285fe 6a06b9b
+Author: Antoine Picard <apicardgoog@users.noreply.github.com>
+Date:   Tue May 12 17:25:28 2020 -0700
+
+    Merge pull request #3 from googleinterns/week-2-additional-features
+    
+    Week 2 additional features
+
+[33mcommit 6a06b9b8bd7c7bd1d2ec66cf1ca2867d8ff6f13b[m
+Author: nmhall <nmhall0@gmail.com>
+Date:   Tue May 12 12:47:48 2020 -0700
+
+    Fixing references for STEP program
+
+[33mcommit aa5dc736fe7556a62c5156c0ad68b86898966bc5[m
+Author: nmhall <nmhall0@gmail.com>
+Date:   Tue May 12 11:52:52 2020 -0700
+
+    Undo overwrites of previous change
+
+[33mcommit 32285fe1a0d7ec99c49d17bdf10b2fdc64f70b3e[m
+Merge: a047e7d 1929ccb
+Author: nmhall <nmhall0@gmail.com>
+Date:   Tue May 12 11:39:24 2020 -0700
+
+    Merge pull request #2 from kdwhite721/patch-1
+    
+    Fix broken SPS link
+
+[33mcommit 0cf66c1a6de3e053945781ebe6d2495051b5dadf[m
+Author: Nathan <nhall@hmc.edu>
+Date:   Tue May 12 10:51:31 2020 -0700
+
+    Include new file
+
+[33mcommit b4654247645e9e0b651026df7251ab849d9ef467[m
+Author: Nathan <nhall@hmc.edu>
+Date:   Tue May 12 10:50:58 2020 -0700
+
+    Instructions for additional features in week 2
+
+[33mcommit 1929ccbdeda3e9c5ed636e8393a56d207086747a[m
+Author: kdwhite721 <52642049+kdwhite721@users.noreply.github.com>
+Date:   Tue May 12 10:14:29 2020 -0500
+
+    Fix broken SPS link
+    
+    Update broken SPS link to be: g.co/softwareproductsprint
+
+[33mcommit a047e7dd2c8a705bb139fc7ee6c7f96a6e1d0091[m
+Author: apicard <apicard@google.com>
+Date:   Mon May 11 17:41:12 2020 -0700
+
+    Copy from internal repo
